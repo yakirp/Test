@@ -6,33 +6,32 @@ public class Main {
 
 		Test test = new Test(1000);
 		System.out.println("4: " + test.get(4));
-	 	test.set(4, "test");
+		test.set(4, "test");
 		System.out.println("4: " + test.get(4));
-		
+
 		test.set(6, 3454);
 		System.out.println("6: " + test.get(6));
-		
-		
+
 		test.setAll("0");
 		test.setAll("0");
 		test.setAll("0");
 		test.setAll("0");
 		test.setAll("0");
-		
+
 		System.out.println("4: " + test.get(4));
 		System.out.println("6: " + test.get(6));
 		System.out.println("5: " + test.get(5));
-		
+
 		test.set(6, 3454);
 		System.out.println("6: " + test.get(6));
 		System.out.println("4: " + test.get(4));
-	    System.out.println("5: " + test.get(5));
-	    
-	    test.setAll("999");
-	    System.out.println("6: " + test.get(6));
+		System.out.println("5: " + test.get(5));
+
+		test.setAll("999");
+		System.out.println("6: " + test.get(6));
 		System.out.println("4: " + test.get(4));
-	    System.out.println("5: " + test.get(5));
-		
+		System.out.println("5: " + test.get(5));
+
 	}
 }
 
@@ -45,7 +44,7 @@ class Test {
 	private int DataLength;
 
 	public Test(int N) {
-		DataLength =N;
+		DataLength = N;
 		data = new DataItem[DataLength];
 	}
 
@@ -63,10 +62,10 @@ class Test {
 
 	public Object get(int index) throws ArrayIndexOutOfBoundsException {
 
-		if (index>=DataLength) {
+		if (index >= DataLength) {
 			throw new ArrayIndexOutOfBoundsException();
 		}
-		
+
 		DataItem tmpObjcet = data[index];
 		if ((tmpObjcet == null) || (tmpObjcet.getCounter() <= setAll_Counter)) {
 			return defaultValue;
